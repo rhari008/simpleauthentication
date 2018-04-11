@@ -11,7 +11,7 @@ applications:
     - samplexsuaa
 
 - name: ar-sample-app
-  host: cppmindia-ar-sample-app
+  host: <subaccount>-ar-sample-app
   path: approuter
   buildpack: nodejs_buildpack
   memory: 256M
@@ -19,9 +19,9 @@ applications:
     destinations: >
       [
         {"name":"sampledestination",
-         "url":"https://sampleapplication.cfapps.eu10.hana.ondemand.com",
+         "url":"https://sampleapplication.<host>",
          "forwardAuthToken": true}
       ]
-    TENANT_HOST_PATTERN: "^(.*)-ar-sample-app.cfapps.eu10.hana.ondemand.com"
+    TENANT_HOST_PATTERN: "^(.*)-ar-sample-app.<host>"
   services:
     - samplexsuaa
